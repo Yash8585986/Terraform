@@ -5,7 +5,7 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [aws_security_group.allow_ports.id ]
 
   tags = {
-    Name = "Aws_rhel_9"
+    Name = var.instance[count.index]
     project = "Roboshop"
     env = "dev"
     Terraform = "True"
